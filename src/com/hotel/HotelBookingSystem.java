@@ -6,6 +6,8 @@ public class HotelBookingSystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
+
+        GuestList guestList = new GuestList();
         while (!exit) {
             System.out.println("Hotel Booking System Menu");
             System.out.println("1: Check-in");
@@ -18,7 +20,7 @@ public class HotelBookingSystem {
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume the newline character
 
-            GuestList guestList = new GuestList();
+            Guest guest = new Guest(null);
             switch (choice) {
                 case 1 -> {
                     System.out.println("Enter guest name: ");
@@ -26,9 +28,8 @@ public class HotelBookingSystem {
                     System.out.println("Enter room number: ");
                     int roomNumber = scanner.nextInt();
 
+                    guest.setName(guestName);
                     // add to guest list and mark room as occupied
-                    Guest guest = new Guest(guestName);
-                    // GuestList guestList = new GuestList();
                     guestList.addGuest(guest);
                     System.out.println(guestName + " has completed checkin for room #" + roomNumber);
                     break;
@@ -37,10 +38,11 @@ public class HotelBookingSystem {
                     System.out.print("Enter guest name: ");
                     String guestName = scanner.nextLine();
 
-                    System.out.println("Enter room number: ");
+                    System.out.print("Enter room number: ");
                     int roomNumber = scanner.nextInt();
 
                     // remove from guest list and mark room as available
+                    guestList.removeGuest(guest);
 
                     System.out.println(guestName + " has completed checkout for room #" + roomNumber);
                     break;

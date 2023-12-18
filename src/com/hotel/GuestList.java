@@ -8,19 +8,18 @@ public class GuestList {
     private int size;
 
     public void addGuest(Guest guest) {
-        System.out.println("Guest " + guest);
         guests.add(guest);
-        System.out.println("top Guests " + guests.get(0).getName());
+        System.out.println(this);
     }
 
     public void removeGuest(Guest guest) {
         guests.removeIf(g -> g.getName().equals(guest.getName()));
     }
 
+    // somehow guests array list is empty here
     public void displayGuests() {
-        System.out.println("Guests " + guests);
         for (Guest guest : guests) {
-            System.out.println(guest);
+            System.out.println(guest.getName());
         }
     }
 }

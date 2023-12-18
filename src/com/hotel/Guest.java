@@ -7,12 +7,11 @@ public class Guest {
         this.name = name;
     }
 
-    // Getters
-    // public Guest getGuestDetails() {
-    //     return this;
-    // }
-
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
