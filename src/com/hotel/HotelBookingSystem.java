@@ -42,7 +42,7 @@ public class HotelBookingSystem {
                     int roomNumber = scanner.nextInt();
 
                     // remove from guest list and mark room as available
-                    guestList.removeGuest(guest);
+                    guestList.removeGuest(guestName);
 
                     System.out.println(guestName + " has completed checkout for room #" + roomNumber);
                     break;
