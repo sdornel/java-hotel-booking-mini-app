@@ -12,7 +12,7 @@ public class HotelBookingSystem {
             System.out.println("Hotel Booking System Menu");
             System.out.println("1: Check-in");
             System.out.println("2: Check-out");
-            System.out.println("3: View available rooms");
+            System.out.println("3: View occupied rooms");
             System.out.println("4: View guest list");
             System.out.println("5: Exit");
             System.out.print("Enter your choice: ");
@@ -48,11 +48,10 @@ public class HotelBookingSystem {
                     break;
                 }
                 case 3 -> {
-                    // loop through array with room number and room type
+                    // get all the occupied rooms
                     break;
                 }
                 case 4 -> {
-                    // loop through array printing new lines for each guest/room number/room type
                     System.out.println("List of guests: ");
                     guestList.displayGuests();
                     break;
