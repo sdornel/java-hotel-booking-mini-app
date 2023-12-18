@@ -1,4 +1,5 @@
-// package hotel-booking-mini-app;
+package hotelbookingminiapp;
+
 import java.util.Scanner;
 
 public class HotelBookingSystem {
@@ -24,7 +25,8 @@ public class HotelBookingSystem {
                     System.out.println("Enter room number: ");
                     int roomNumber = scanner.nextInt();
 
-                    // add from guest list and mark room as occupied
+                    // add to guest list and mark room as occupied
+                    
 
                     System.out.println(guestName + " has completed checkin for room #" + roomNumber);
                     break;
