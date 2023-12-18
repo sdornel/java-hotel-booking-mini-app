@@ -1,3 +1,4 @@
+// package hotel-booking-mini-app;
 import java.util.Scanner;
 
 public class HotelBookingSystem {
