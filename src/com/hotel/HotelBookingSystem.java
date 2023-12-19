@@ -50,7 +50,8 @@ public class HotelBookingSystem {
                     break;
                 }
                 case 3 -> {
-                    // get all the occupied rooms
+                    System.out.println("Displaying occupied rooms...");
+                    roomList.displayOccupiedRooms();
                     break;
                 }
                 case 4 -> {
@@ -59,7 +60,8 @@ public class HotelBookingSystem {
                     break;
                 }
                 case 5 -> {
-                    System.out.println("Accessing...");
+                    System.out.println("Displaying all rooms...");
+                    System.out.println("Accessing data...");
                     RoomList.displayAllRooms();
                     break;
                 }
