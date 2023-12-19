@@ -24,6 +24,7 @@ public class HotelBookingSystem {
             Guest guest = new Guest(null);
             switch (choice) {
                 case 1 -> {
+                    System.out.println();
                     System.out.println("Enter guest name: ");
                     String guestName = scanner.nextLine();
                     System.out.println("Enter room number: ");
@@ -34,9 +35,11 @@ public class HotelBookingSystem {
                     guestList.addGuest(guest);
                     RoomList.occupyRoom(roomNumber, guestName);
                     System.out.println(guestName + " has completed checkin for room #" + roomNumber);
+                    System.out.println();
                     break;
                 }
                 case 2 -> {
+                    System.out.println();
                     System.out.print("Enter guest name: ");
                     String guestName = scanner.nextLine();
 
@@ -48,6 +51,7 @@ public class HotelBookingSystem {
                     RoomList.unoccupyRoom(roomNumber);
 
                     System.out.println(guestName + " has completed checkout for room #" + roomNumber);
+                    System.out.println();
                     break;
                 }
                 case 3 -> {
