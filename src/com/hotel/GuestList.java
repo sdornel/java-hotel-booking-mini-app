@@ -7,7 +7,6 @@ import java.util.Iterator;
 
 public class GuestList {
     private ArrayList<Guest> guests = new ArrayList<>();
-    private int size;
 
     public void addGuest(Guest guest) {
         this.guests.add(guest);
@@ -26,8 +25,10 @@ public class GuestList {
     }
 
     public void displayGuests() {
+        System.out.println();
         for (Guest guest : guests) {
             System.out.println(guest.getName());
         }
+        System.out.println();
     }
 }

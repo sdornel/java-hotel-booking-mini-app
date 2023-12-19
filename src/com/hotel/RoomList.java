@@ -1,58 +1,40 @@
 package com.hotel;
 
-import com.hotel.Guest;
 import com.hotel.Room.RoomType;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-
 public class RoomList {
-    private ArrayList<Room> rooms = new ArrayList<>();
-    private ArrayList<Room> occupiedRooms = new ArrayList<>();
-    private int size;
 
-    private static Room[] roomArray = { new Room(1, RoomType.ONEBED), new Room(2, RoomType.ONEBED),
-            new Room(3, RoomType.TWOBED), new Room(4, RoomType.ONEBED), new Room(5, RoomType.TWOBED),
-            new Room(6, RoomType.THREEBED), new Room(7, RoomType.THREEBED), new Room(8, RoomType.TWOBED),
-            new Room(9, RoomType.ONEBED), new Room(10, RoomType.ONEBED), new Room(11, RoomType.ONEBED),
-            new Room(12, RoomType.ONEBED), new Room(13, RoomType.ONEBED), new Room(14, RoomType.TWOBED),
-            new Room(15, RoomType.SUITE) };
+    private static Room[] roomArray = { new Room(1, RoomType.ONEBED, null), new Room(2, RoomType.ONEBED, null),
+            new Room(3, RoomType.TWOBED, null), new Room(4, RoomType.ONEBED, null), new Room(5, RoomType.TWOBED, null),
+            new Room(6, RoomType.THREEBED, null), new Room(7, RoomType.THREEBED, null), new Room(8, RoomType.TWOBED, null),
+            new Room(9, RoomType.ONEBED, null), new Room(10, RoomType.ONEBED, null), new Room(11, RoomType.ONEBED, null),
+            new Room(12, RoomType.ONEBED, null), new Room(13, RoomType.ONEBED, null), new Room(14, RoomType.TWOBED, null),
+            new Room(15, RoomType.SUITE, null) };
 
-    public RoomList() {
-        // this.rooms = RoomList.roomArray;
-        ArrayList<Room> rooms = new ArrayList<>(Arrays.asList(roomArray));
-
-    }
-
-    public void occupyRoom(int number) {
+    public static void occupyRoom(int number, String guestName) {
         // retrieve room type using room number and do .add with both pieces of data
-        // this.occupiedRooms.add(number);
-        System.out.println(this);
+        roomArray[number-1].setGuestName(guestName);
     }
 
-    public void unoccupyRoom(int roomNumber) {
-        Iterator<Room> iterator = this.occupiedRooms.iterator();
-        while (iterator.hasNext()) {
-            Room instance = iterator.next();
-            if (instance.getNumber() == roomNumber) {
-                iterator.remove();
-                break; // Remove only the first occurrence
+    public static void unoccupyRoom(int number) {
+        roomArray[number-1].setGuestName(null);
+    }
+
+    public static void displayOccupiedRooms() {
+        System.out.println();
+        for (Room room : roomArray) {
+            if (room.getGuestName() != null) {
+                System.out.println("roomNo=" + room.getNumber() + ", roomType=" + room.getType().toString() + ", guestName=" + room.getGuestName());
             }
         }
-    }
-
-    public void displayOccupiedRooms() {
-        for (Room room : occupiedRooms) {
-            System.out.println("roomNo=" + room.getNumber() + ", roomType=" + room.getType().toString());
-        }
+        System.out.println();
     }
 
     public static void displayAllRooms() {
         // simulate database fetch
         for (Room room : roomArray) {
-            System.out.println("roomNo=" + room.getNumber() + ", roomType=" + room.getType().toString());
+            System.out.println("roomNo=" + room.getNumber() + ", roomType=" + room.getType().toString() + ", guestName=" + room.getGuestName());
         }
+        System.out.println();
     }
 }

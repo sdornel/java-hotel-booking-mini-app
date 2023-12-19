@@ -3,14 +3,16 @@ package com.hotel;
 public class Room {
     private int number;
     private RoomType type;
+    private String guestName;
     
     public enum RoomType {
         ONEBED, TWOBED, THREEBED, SUITE
     }
 
-    public Room(int number, RoomType type) {
+    public Room(int number, RoomType type, String guestName) {
         this.number = number;
         this.type = type;
+        this.guestName = null;
     }
 
     // Getters
@@ -22,6 +24,10 @@ public class Room {
         return type;
     }
 
+    public String getGuestName() {
+        return guestName;
+    }
+
     // Setters
     public void setNumber(int number) {
         this.number = number;
@@ -29,5 +35,9 @@ public class Room {
 
     public void setType(RoomType type) {
         this.type = type;
+    }
+
+    public void setGuestName(String guestName) {
+        this.guestName = guestName;
     }
 }

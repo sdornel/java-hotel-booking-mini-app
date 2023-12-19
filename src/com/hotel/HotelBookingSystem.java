@@ -8,7 +8,6 @@ public class HotelBookingSystem {
         boolean exit = false;
 
         GuestList guestList = new GuestList();
-        RoomList roomList = new RoomList();
         while (!exit) {
             System.out.println("Hotel Booking System Menu");
             System.out.println("1: Check-in");
@@ -33,6 +32,7 @@ public class HotelBookingSystem {
                     guest.setName(guestName);
                     // add to guest list and mark room as occupied
                     guestList.addGuest(guest);
+                    RoomList.occupyRoom(roomNumber, guestName);
                     System.out.println(guestName + " has completed checkin for room #" + roomNumber);
                     break;
                 }
@@ -45,13 +45,14 @@ public class HotelBookingSystem {
 
                     // remove from guest list and mark room as available
                     guestList.removeGuest(guestName);
+                    RoomList.unoccupyRoom(roomNumber);
 
                     System.out.println(guestName + " has completed checkout for room #" + roomNumber);
                     break;
                 }
                 case 3 -> {
                     System.out.println("Displaying occupied rooms...");
-                    roomList.displayOccupiedRooms();
+                    RoomList.displayOccupiedRooms();
                     break;
                 }
                 case 4 -> {
