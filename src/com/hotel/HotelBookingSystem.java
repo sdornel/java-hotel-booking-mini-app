@@ -8,13 +8,15 @@ public class HotelBookingSystem {
         boolean exit = false;
 
         GuestList guestList = new GuestList();
+        RoomList roomList = new RoomList();
         while (!exit) {
             System.out.println("Hotel Booking System Menu");
             System.out.println("1: Check-in");
             System.out.println("2: Check-out");
             System.out.println("3: View occupied rooms");
             System.out.println("4: View guest list");
-            System.out.println("5: Exit");
+            System.out.println("5: View all rooms");
+            System.out.println("6: Exit");
             System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
@@ -57,6 +59,11 @@ public class HotelBookingSystem {
                     break;
                 }
                 case 5 -> {
+                    System.out.println("Accessing...");
+                    RoomList.displayAllRooms();
+                    break;
+                }
+                case 6 -> {
                     System.out.println("Exiting Hotel Booking System. Goodbye!");
                     exit = true;
                     break;

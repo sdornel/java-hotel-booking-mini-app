@@ -3,7 +3,7 @@ package com.hotel;
 import com.hotel.Guest;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
+// import java.util.List;
 
 public class GuestList {
     private ArrayList<Guest> guests = new ArrayList<>();
@@ -25,7 +25,6 @@ public class GuestList {
         }
     }
 
-    // somehow guests array list is empty here
     public void displayGuests() {
         for (Guest guest : guests) {
             System.out.println(guest.getName());

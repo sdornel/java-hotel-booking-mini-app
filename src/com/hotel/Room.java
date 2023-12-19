@@ -5,7 +5,7 @@ public class Room {
     private RoomType type;
     
     public enum RoomType {
-        ONEBED, TWOBED, SUITE
+        ONEBED, TWOBED, THREEBED, SUITE
     }
 
     public Room(int number, RoomType type) {
