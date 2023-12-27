@@ -10,11 +10,12 @@ public class GuestList {
 
     public void addGuest(Guest guest) {
         this.guests.add(guest);
-        System.out.println(this);
     }
 
-    public void removeGuest(String guestName) {
+    public boolean removeGuest(String guestName) {
         Iterator<Guest> iterator = this.guests.iterator();
+        System.out.println("iterator " + iterator);
+        boolean foundGuest = false;
         while (iterator.hasNext()) {
             Guest instance = iterator.next();
             if (instance.getName().equals(guestName)) {
@@ -22,6 +23,7 @@ public class GuestList {
                 break; // Remove only the first occurrence
             }
         }
+        return foundGuest;
     }
 
     public void displayGuests() {

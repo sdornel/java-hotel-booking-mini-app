@@ -16,8 +16,12 @@ public class RoomList {
         roomArray[number-1].setGuestName(guestName);
     }
 
-    public static void unoccupyRoom(int number) {
-        roomArray[number-1].setGuestName(null);
+    public static void unoccupyRoom(int number, String guestName) throws Exception {
+        if (roomArray[number-1].getGuestName() != guestName) {
+            throw new Exception();
+        } else {
+            roomArray[number-1].setGuestName(null);
+        }
     }
 
     public static void displayOccupiedRooms() {
